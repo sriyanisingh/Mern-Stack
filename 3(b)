@@ -1,0 +1,73 @@
+<html> 
+<head> 
+    <title>Internal and External JavaScript</title> 
+ 
+    <!-- Internal JavaScript  alert() Displays a popup message--> 
+    <script> 
+        function internalMessage() { 
+            alert("This is Internal JavaScript"); 
+        } 
+    </script> 
+</head> 
+<body> 
+ 
+    <h1>JavaScript Embedding Example</h1> 
+ 
+    <button onclick="internalMessage()"> 
+        Internal JavaScript 
+    </button> 
+ 
+    <br><br> 
+ 
+    <button onclick="externalMessage()"> 
+        External JavaScript 
+    </button> 
+ 
+    <!-- External JavaScript --> 
+    <script src="script.js"></script> 
+ 
+</body> 
+</html>
+function externalMessage() { 
+alert("This is External JavaScript"); 
+} 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>JavaScript Output Methods</title> 
+    <script> 
+        function showAlert() { 
+            alert("This output is displayed using alert()"); 
+        } 
+ 
+        function writeDocument() { 
+            document.write("This output is displayed using document.write()"); 
+        } 
+ 
+        function showInnerHTML() { 
+            document.getElementById("output").innerHTML = 
+                "This output is displayed using innerHTML"; 
+        } 
+ 
+        function showConsole() { 
+            console.log("This output is displayed using console.log()"); 
+        } 
+    </script> 
+</head> 
+<body> 
+ 
+    <h1>Different Ways of Displaying Output in JavaScript</h1> 
+ 
+    <button onclick="showAlert()">Alert Output</button> 
+    <br><br> 
+ 
+    <button onclick="writeDocument()">Document Write Output</button> 
+    <br><br> 
+ 
+    <button onclick="showInnerHTML()">InnerHTML Output</button> 
+    <p id="output"></p> 
+ 
+    <button onclick="showConsole()">Console Output</button> 
+ 
+</body> 
+</html>
