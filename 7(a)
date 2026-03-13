@@ -1,0 +1,55 @@
+const express = require('express'); 
+const app = express(); 
+const PORT = 3000; 
+// Basic Route 
+app.get('/', (req, res) => { 
+res.send('Welcome to ExpressJS Routing'); 
+}); 
+// Route Parameter 
+app.get('/student/:id', (req, res) => { 
+res.send(`Student ID: ${req.params.id}`); 
+}); 
+// Multiple Route Parameters 
+app.get('/course/:name/:duration', (req, res) => { 
+const { name, duration } = req.params; 
+res.send(`Course: ${name}, Duration: ${duration}`); 
+}); 
+// Query Parameters 
+app.get('/search', (req, res) => { 
+const { subject, level } = req.query; 
+res.send(`Subject: ${subject}, Level: ${level}`); 
+}); 
+// URL Building 
+app.get('/build-url', (req, res) => { 
+const url = `/student/101?role=monitor`; 
+res.send(`Generated URL: ${url}`); 
+}); 
+app.listen(PORT, () => { 
+console.log(`Server running on http://localhost:${PORT}`); 
+}); 
+b. Write a program to accept data, retrieve data and delete a specified resource using HTTP 
+methods. 
+const express = require('express'); 
+const app = express(); 
+const PORT = 3000; 
+app.use(express.json()); // to read JSON data 
+let items = [];  // temporary storage 
+// POST → Add data 
+app.post('/items', (req, res) => { 
+const item = req.body; 
+items.push(item); 
+res.send('Item added successfully'); 
+}); 
+// GET → Retrieve all data 
+app.get('/items', (req, res) => { 
+res.json(items); 
+}); 
+// DELETE → Delete specific item by index 
+app.delete('/items/:index', (req, res) => { 
+const index = req.params.index; 
+items.splice(index, 1); 
+res.send('Item deleted successfully'); 
+}); 
+app.listen(PORT, () => { 
+console.log(`Server running on port ${PORT}`); 
+}); 
