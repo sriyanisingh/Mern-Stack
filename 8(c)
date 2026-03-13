@@ -1,0 +1,22 @@
+Create → Add new data 
+Write a program to connect MongoDB database using Mongoose and perform CRUD 
+operations. 
+Used to insert new records into the database. 
+Example: Add a new student 
+Name: Ravi 
+Age: 21 
+Read → View data 
+Used to retrieve or display data from the database. 
+Example: Show all students list 
+In simple words: see stored information 
+Update → Modify data 
+Used to change existing data in the database. 
+Example: Change Ravi’s age from 21 to 22
+In simple words: edit stored information 
+Delete → Remove data 
+Used to delete records from the database. 
+Example: Remove Ravi from student list 
+In simple words: remove stored information 
+Install packages 
+npm install express mongoose body-parser 
+Start MongoDB server
